@@ -21,7 +21,6 @@ if ( ! defined( 'WPINC' ) ) {
 require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
 
 add_action( 'plugins_loaded', function () {
-
 	load_plugin_textdomain(
 		'recovery-mode-to-line-notify',
 		false,
@@ -30,8 +29,6 @@ add_action( 'plugins_loaded', function () {
 
 	if ( is_admin() ) {
 		$admin = new Admin();
-//		$admin->activate();
 	}
-//	$api = new Api();
-//	$api->register();
+	$notification = new Notification();
 } );
