@@ -21,7 +21,7 @@ class Notification {
 
 	public function recovery_mode_email( $email, $url ) {
 		$this->options = get_option( $this->option_name );
-		if ( ! isset( $this->options['access_token'] ) {
+		if ( ! isset( $this->options['access_token'] ) ) {
 			return $email;
 		}
 
