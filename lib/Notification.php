@@ -33,15 +33,7 @@ class Notification {
 		 */
 		$message = apply_filters( 'recovery_mode_to_line_notify_message', $email['message'], $url);
 
-		$response = wp_remote_post( $this->line_notify_endpoint, [
-			'method'  => 'POST',
-			'headers' => [
-				'Authorization' => 'Bearer ' . $this->options['access_token'],
-			],
-			'body'    => [
-				'message' => $message,
-			],
-		] );
+		$response = $this->notify( $this->options['access_token'], $message );
 		if ( is_wp_error( $response ) ) {
 			/**
 			 * Fires after LINE Notify request error occured.
@@ -52,5 +44,17 @@ class Notification {
 		}
 
 		return $email;
+	}
+
+	public function notify( $access_token, $message ) {
+		return wp_remote_post( $this->line_notify_endpoint, [
+			'method'  => 'POST',
+			'headers' => [
+				'Authorization' => 'Bearer ' . $access_token,
+			],
+			'body'    => [
+				'message' => $message,
+			],
+		] );
 	}
 }
