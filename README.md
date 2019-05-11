@@ -13,3 +13,10 @@ Recovery mode e-mail will be sent to LINE Notify.
 ## Description ##
 
 Recovery mode e-mail will be sent to LINE Notify.
+
+Please be careful. This is a **Must Use Plugins**.
+
+## Installation ##
+
+1. Upload the `recovery-mode-to-line-notify.php` to the mu-plugins directory, which is found in `wp-content/mu-plugins` by default.
+1. You can do settings in 'Dashboard'->'Settings'->'Recovery mode to LINE Notify'
