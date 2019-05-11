@@ -1,0 +1,7 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Recovery_Mode_To_Line_Notify\\": "lib/"
+    }
+  }
+}
