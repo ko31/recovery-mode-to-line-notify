@@ -22,6 +22,8 @@ class Recovery_Mode_To_Line_Notify {
 
 	private $options;
 
+	private $line_notify_endpoint = 'https://notify-api.line.me/api/notify';
+
 	public function __construct() {
 		$this->domain_name = 'recovery-mode-to-line-notify';
 		$this->activate();
